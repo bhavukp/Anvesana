@@ -7,6 +7,7 @@ const Router = () => {
     <div className='p-4'>
       <Routes>
         <Route exact path="/" element={<Navigate to="/search"/>}/>
+        <Route exact path="/anvesana/" element={<Navigate to="/search"/>}/>
         {['/search','/images','/news','/videos'].map((val,index)=>( <Route key={index} path={val} element={<Results/>}/> ) )}
       </Routes>
     </div>

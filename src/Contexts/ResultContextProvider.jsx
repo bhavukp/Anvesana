@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
 import { createContext, useContext, useState } from 'react'
 
 export const resultContext = createContext();
@@ -17,7 +16,7 @@ export const ResultContextProvider = ({ children }) => {
     const getResults = async (query, type) => {
         setIsLoading(true);
 
-        if (type == "search") {
+        if (type === "search") {
             const res = await fetch(`${baseURL}${query}`, {
                 method: 'GET',
                 headers: {
@@ -32,7 +31,7 @@ export const ResultContextProvider = ({ children }) => {
             setResults(data.results);
         }
 
-        if (type == "news") {
+        if (type === "news") {
             console.log("news api hit");
             const res = await fetch(newsURL, {
                 method: 'POST',
@@ -54,7 +53,7 @@ export const ResultContextProvider = ({ children }) => {
             setResults(data.news);
         }
 
-        if (type == "images") {
+        if (type === "images") {
             console.log("images api hit");
             const res = await fetch(imageURL, {
                 method: 'POST',
@@ -81,7 +80,7 @@ export const ResultContextProvider = ({ children }) => {
             setResults(data.result);
         }
 
-        if (type == "videos") {
+        if (type === "videos") {
             console.log("videos api hit");
             const res = await fetch(videoURL, {
                 method: 'POST',
